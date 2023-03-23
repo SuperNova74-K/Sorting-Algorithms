@@ -3,6 +3,7 @@
 //
 
 #include <stdexcept>
+#include <random>
 #include "algorithm"
 
 namespace sortlib{
@@ -85,7 +86,7 @@ namespace sortlib{
     }
 
     template<typename T, int size>
-    void countSort(T (&arr)[size]){
+    void countSort(T (&arr)[size]){ // works with negative numbers too
         if(not size)
             return;
 
@@ -173,6 +174,33 @@ namespace sortlib{
         mergeSort(arr, mid + 1, end);
         merge_two_lists (arr, start, mid, end);
     }
+
+    template<typename T, int size>
+    int partition(T (&arr)[size], int start , int end) {
+
+        T pivot = arr[end];
+
+        int i = start - 1;
+        for (int j = start; j < end; ++j) {
+            if(arr[j] <= pivot){
+                i++;
+                std::swap(arr[j], arr[i]);
+            }
+        }
+        std::swap(arr[i + 1], arr[end]);
+        return i + 1;
+    }
+
+    template<typename T, int size>
+    void quickSort(T (&arr)[size], int start , int end) {
+        if(start >= end)
+            return;
+
+        int pivotIndex = partition(arr, start, end);
+        quickSort(arr, start , pivotIndex - 1);
+        quickSort(arr, pivotIndex + 1, end);
+    }
+
 
 }
 

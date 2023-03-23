@@ -29,16 +29,23 @@ using namespace std;
 typedef vector<ll> vll;
 typedef vector<int> vint;
 
+//std::random_device randomDevice;
+//
+//std::mt19937 generator(randomDevice());
+//
+//std::uniform_int_distribution<int> intDistro(start, end);
+//
+//int pivotIndex = intDistro(generator);
 
 
 int main() {
     fio
 
-//    string arr[]{"kahled", "waleed", "a", "c", "b"};
-
-    int arr[]{10,9,8,7,6,5,4,3,2,1,-50,-44,5854};
-
-    sortlib::mergeSort(arr, 0, sizeof arr/ sizeof(arr[0]) - 1);
+    string arr[]{"kahled", "waleed", "a", "c", "b"};
+//
+//    int arr[]{10,9,8,7,6,5,4,3,2,1,-50,-44,5854};
+//
+    sortlib::quickSort(arr, 0, sizeof arr/ sizeof(arr[0]) - 1);
 
     for(auto & i : arr)
         cout << i << newline;
