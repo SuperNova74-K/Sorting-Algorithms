@@ -34,8 +34,11 @@ typedef vector<int> vint;
 int main() {
     fio
 
-    string arr[]{"kahled", "waleed", "a", "c", "b"};
-    sortlib::insertionSort(arr);
+//    string arr[]{"kahled", "waleed", "a", "c", "b"};
+
+    int arr[]{10,9,8,7,6,5,4,3,2,1,-50,-44,5854};
+
+    sortlib::mergeSort(arr, 0, sizeof arr/ sizeof(arr[0]) - 1);
 
     for(auto & i : arr)
         cout << i << newline;
