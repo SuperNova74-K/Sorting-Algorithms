@@ -34,8 +34,8 @@ typedef vector<int> vint;
 int main() {
     fio
 
-    int arr[]{3,2,6,8,9,7,1,2,8,4,6,8,49687,1};
-    sortlib::selectionSort(arr);
+    string arr[]{"kahled", "waleed", "a", "c", "b"};
+    sortlib::insertionSort(arr);
 
     for(auto & i : arr)
         cout << i << newline;

@@ -8,7 +8,20 @@
 namespace sortlib{
     template<typename T, int size>
     void insertionSort(T (&arr)[size]){
+        for (int firstNotSorted = 1; firstNotSorted < size; ++firstNotSorted) {
+            if(arr[firstNotSorted] < arr[firstNotSorted - 1]){
+                T temp = arr[firstNotSorted];
 
+                int location = firstNotSorted;
+
+                do{
+                    arr[location] = arr[location - 1];
+                    location--;
+                }while(location > 0 and temp < arr[location - 1]);
+
+                arr[location] = temp;
+            }
+        }
     }
 
     template<typename T, int size>
