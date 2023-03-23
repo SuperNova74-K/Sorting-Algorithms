@@ -14,10 +14,9 @@ namespace sortlib{
 
                 int location = firstNotSorted;
 
-                do{
+                for (; location > 0 && temp < arr[location - 1] ; location--) {
                     arr[location] = arr[location - 1];
-                    location--;
-                }while(location > 0 and temp < arr[location - 1]);
+                }
 
                 arr[location] = temp;
             }
